@@ -1,5 +1,5 @@
 %define name lshw
-%define version 2.09
+%define version 2.10
 %define realversion B.0%{version}
 %define release %mkrel 1
 
