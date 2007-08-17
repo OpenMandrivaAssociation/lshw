@@ -50,7 +50,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/lshw
 %{_datadir}/lshw/*.txt
 %{_datadir}/lshw/*.ids
-%attr(644,root,root) %{_mandir}/man1/lshw.1.bz2
+%attr(644,root,root) %{_mandir}/man1/lshw.*
 
 %files gui
 %defattr(-,root,root)
