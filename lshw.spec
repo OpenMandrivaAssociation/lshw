@@ -11,7 +11,6 @@ Source0: http://ezix.sourceforge.net/software/files/%{name}-%{realversion}.tar.b
 License: GPL
 Group: System/Kernel and hardware
 Url: http://ezix.sourceforge.net/software/lshw.html
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 lshw (Hardware Lister) is a tool to provide detailed information 
