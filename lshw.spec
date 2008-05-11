@@ -1,15 +1,14 @@
 %define name lshw
-%define version 2.12.01
+%define version 2.13
 %define realversion B.0%{version}
-%define release %mkrel 2
+%define release %mkrel 1
 
 Summary: A hardware lister
 Name: %{name}
 Version: %{version}
 Release: %{release}
-Source0: http://ezix.sourceforge.net/software/files/%{name}-%{realversion}.tar.bz2
-Patch0:	 lshw-B.02.12.01-config_cap.patch
-License: GPL
+Source0: http://ezix.sourceforge.net/software/files/%{name}-%{realversion}.tar.gz
+License: GPLv2
 Group: System/Kernel and hardware
 Url: http://ezix.sourceforge.net/software/lshw.html
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -29,7 +28,6 @@ This package provides a graphical user interface to lshw
 
 %prep
 %setup -q -n %{name}-%{realversion}
-%patch0 -p1 -b .config_cap
 # Ugly since 2.07 default rights are messed
 find -type f | xargs chmod 644
 find -type d | xargs chmod 755
