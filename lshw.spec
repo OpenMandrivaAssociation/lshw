@@ -8,6 +8,7 @@ Name: %{name}
 Version: %{version}
 Release: %{release}
 Source0: http://ezix.sourceforge.net/software/files/%{name}-%{realversion}.tar.gz
+Patch0:	lshw-02.13b-gcc43.patch
 License: GPLv2
 Group: System/Kernel and hardware
 Url: http://ezix.sourceforge.net/software/lshw.html
@@ -28,6 +29,7 @@ This package provides a graphical user interface to lshw
 
 %prep
 %setup -q -n %{name}-%{realversion}
+%patch0
 # Ugly since 2.07 default rights are messed
 find -type f | xargs chmod 644
 find -type d | xargs chmod 755
