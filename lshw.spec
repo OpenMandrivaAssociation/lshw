@@ -1,14 +1,13 @@
 %define name lshw
-%define version 2.13
+%define version 2.14
 %define realversion B.0%{version}
-%define release %mkrel 2
+%define release %mkrel 1
 
 Summary: A hardware lister
 Name: %{name}
 Version: %{version}
 Release: %{release}
 Source0: http://ezix.sourceforge.net/software/files/%{name}-%{realversion}.tar.gz
-Patch0:	lshw-02.13b-gcc43.patch
 License: GPLv2
 Group: System/Kernel and hardware
 Url: http://ezix.sourceforge.net/software/lshw.html
