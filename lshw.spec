@@ -1,7 +1,7 @@
 %define name lshw
 %define version 2.14
 %define realversion B.0%{version}
-%define release %mkrel 2
+%define release %mkrel 3
 
 Summary: A hardware lister
 Name: %{name}
@@ -12,6 +12,7 @@ License: GPLv2
 Group: System/Kernel and hardware
 Url: http://ezix.sourceforge.net/software/lshw.html
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Requires: ldetect-lst >= 0.1.282
 
 %description
 lshw (Hardware Lister) is a tool to provide detailed information 
@@ -41,6 +42,9 @@ rm -rf $RPM_BUILD_ROOT
 %makeinstall DESTDIR=$RPM_BUILD_ROOT
 make PREFIX=%_prefix SBINDIR=%_sbindir MANDIR=%_mandir DESTDIR=$RPM_BUILD_ROOT install-gui
 
+# packaged as part of ldetect-lst
+rm -f $RPM_BUILD_ROOT%{_datadir}/lshw/{oui.txt,*.ids}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -49,7 +53,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_sbindir}/lshw
 %dir %{_datadir}/lshw
 %{_datadir}/lshw/*.txt
-%{_datadir}/lshw/*.ids
 %attr(644,root,root) %{_mandir}/man1/lshw.*
 
 %files gui
