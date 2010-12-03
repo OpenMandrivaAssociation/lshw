@@ -13,6 +13,7 @@ Group: System/Kernel and hardware
 Url: http://ezix.sourceforge.net/software/lshw.html
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires: ldetect-lst >= 0.1.282
+BuildRequires: sqlite3-devel
 
 %description
 lshw (Hardware Lister) is a tool to provide detailed information 
@@ -45,10 +46,12 @@ make PREFIX=%_prefix SBINDIR=%_sbindir MANDIR=%_mandir DESTDIR=$RPM_BUILD_ROOT i
 # packaged as part of ldetect-lst
 rm -f $RPM_BUILD_ROOT%{_datadir}/lshw/{oui.txt,*.ids}
 
+%find_lang %{name}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(-,root,root)
 %{_sbindir}/lshw
 %dir %{_datadir}/lshw
