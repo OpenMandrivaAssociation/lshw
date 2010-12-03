@@ -1,7 +1,7 @@
 %define name lshw
-%define version 2.14
+%define version 2.15
 %define realversion B.0%{version}
-%define release %mkrel 4
+%define release %mkrel 1
 
 Summary: A hardware lister
 Name: %{name}
