@@ -39,17 +39,17 @@ make
 make gui
 
 %install
-rm -rf $RPM_BUILD_ROOT
-%makeinstall DESTDIR=$RPM_BUILD_ROOT
-make PREFIX=%_prefix SBINDIR=%_sbindir MANDIR=%_mandir DESTDIR=$RPM_BUILD_ROOT install-gui
+rm -rf %{buildroot}
+%makeinstall DESTDIR=%{buildroot}
+make PREFIX=%_prefix SBINDIR=%_sbindir MANDIR=%_mandir DESTDIR=%{buildroot} install-gui
 
 # packaged as part of ldetect-lst
-rm -f $RPM_BUILD_ROOT%{_datadir}/lshw/{oui.txt,*.ids}
+rm -f %{buildroot}%{_datadir}/lshw/{oui.txt,*.ids}
 
 %find_lang %{name}
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files -f %{name}.lang
 %defattr(-,root,root)
