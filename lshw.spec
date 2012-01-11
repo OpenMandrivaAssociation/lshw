@@ -1,17 +1,18 @@
 %define name lshw
-%define version 2.15
+%define version 2.16
 %define realversion B.0%{version}
-%define release %mkrel 2
+%define release %mkrel 1
 
 Summary: A hardware lister
 Name: %{name}
 Version: %{version}
 Release: %{release}
-Source0: http://ezix.sourceforge.net/software/files/%{name}-%{realversion}.tar.gz
+# To get sources tarball use command
+# svn co http://ezix.org/source/packages/lshw/releases/%{realversion} %{name}-%{realversion} && tar -czf %{name}-%{realversion}.tar.gz --exclude .svn %{name}-%{realversion}
+Source0: %{name}-%{realversion}.tar.gz
 License: GPLv2
 Group: System/Kernel and hardware
-Url: http://ezix.sourceforge.net/software/lshw.html
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Url: http://ezix.org/project/wiki/HardwareLiSter
 Requires: ldetect-lst >= 0.1.282
 BuildRequires: sqlite3-devel
 
@@ -39,8 +40,7 @@ make
 make gui
 
 %install
-rm -rf %{buildroot}
-%makeinstall DESTDIR=%{buildroot}
+%makeinstall_std
 make PREFIX=%_prefix SBINDIR=%_sbindir MANDIR=%_mandir DESTDIR=%{buildroot} install-gui
 
 # packaged as part of ldetect-lst
@@ -63,5 +63,4 @@ rm -rf %{buildroot}
 %doc COPYING
 %{_sbindir}/gtk-lshw
 %{_datadir}/lshw/artwork
-
-
+%{_datadir}/lshw/ui/gtk-lshw.ui
