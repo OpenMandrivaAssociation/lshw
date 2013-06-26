@@ -1,12 +1,9 @@
-%define name lshw
-%define version 2.16
 %define realversion B.0%{version}
-%define release 1
 
 Summary: A hardware lister
-Name: %{name}
-Version: %{version}
-Release: %{release}
+Name:    lshw
+Version: 2.16
+Release: 2
 # To get sources tarball use command
 # svn co http://ezix.org/source/packages/lshw/releases/%{realversion} %{name}-%{realversion} && tar -czf %{name}-%{realversion}.tar.gz --exclude .svn %{name}-%{realversion}
 Source0: %{name}-%{realversion}.tar.gz
@@ -26,7 +23,6 @@ Summary: HardWare LiSter (GUI version)
 Group:  System/Kernel and hardware
 Requires: %{name}
 Requires: gtk2
-BuildRequires: gtk2-devel
 %description gui
 This package provides a graphical user interface to lshw
 
