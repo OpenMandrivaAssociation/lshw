@@ -3,7 +3,7 @@
 Summary:	A hardware lister
 Name:		lshw
 Version:	2.17
-Release:	1
+Release:	2
 License:	GPLv2
 Group:		System/Kernel and hardware
 Url:		http://ezix.org/project/wiki/HardwareLiSter
