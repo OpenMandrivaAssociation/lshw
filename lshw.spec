@@ -10,6 +10,7 @@ Url:		http://ezix.org/project/wiki/HardwareLiSter
 # To get sources tarball use command
 # svn co http://ezix.org/source/packages/lshw/releases/%{realversion} %{name}-%{realversion} && tar -czf %{name}-%{realversion}.tar.gz --exclude .svn %{name}-%{realversion}
 Source0:	%{name}-%{realversion}.tar.gz
+Patch0:		move-to-clang.patch
 BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	pkgconfig(sqlite3)
 Requires:	ldetect-lst >= 0.1.282
@@ -29,6 +30,7 @@ This package provides a graphical user interface to lshw
 
 %prep
 %setup -qn %{name}-%{realversion}
+%apply_patches
 # Ugly since 2.07 default rights are messed
 find -type f | xargs chmod 644
 find -type d | xargs chmod 755
@@ -39,7 +41,7 @@ make gui
 
 %install
 %makeinstall_std
-make PREFIX=%{_prefix} SBINDIR=%{_sbindir} MANDIR=%{_mandir} DESTDIR=%{buildroot} install-gui
+%make PREFIX=%{_prefix} SBINDIR=%{_sbindir} MANDIR=%{_mandir} DESTDIR=%{buildroot} install-gui
 
 # packaged as part of ldetect-lst
 rm -f %{buildroot}%{_datadir}/lshw/{oui.txt,*.ids}

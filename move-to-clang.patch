@@ -1,0 +1,39 @@
+diff --git a/src/Makefile b/src/Makefile
+index e1a849b..ce8d6df 100644
+--- a/src/Makefile
++++ b/src/Makefile
+@@ -18,7 +18,7 @@ export MANDIR
+ export DATADIR
+ export SQLITE
+ 
+-CXX?=c++
++CXX?=clang++
+ INCLUDES=-I./core/
+ DEFINES=-DPREFIX=\"$(PREFIX)\" -DSBINDIR=\"$(SBINDIR)\" -DMANDIR=\"$(MANDIR)\" -DDATADIR=\"$(DATADIR)\"
+ CXXFLAGS=-g -Wall -g $(INCLUDES) $(DEFINES) $(RPM_OPT_FLAGS)
+diff --git a/src/core/Makefile b/src/core/Makefile
+index 44abc5e..5529862 100644
+--- a/src/core/Makefile
++++ b/src/core/Makefile
+@@ -1,6 +1,6 @@
+ PACKAGENAME?=lshw
+ 
+-CXX=c++
++CXX=clang++
+ INCLUDES=
+ DEFINES=-DPREFIX=\"$(PREFIX)\" -DSBINDIR=\"$(SBINDIR)\" -DMANDIR=\"$(MANDIR)\" -DDATADIR=\"$(DATADIR)\"
+ CXXFLAGS?=-g -Wall $(INCLUDES) $(DEFINES) $(RPM_OPT_FLAGS)
+diff --git a/src/gui/Makefile b/src/gui/Makefile
+index c26ac3a..cdd7bb7 100644
+--- a/src/gui/Makefile
++++ b/src/gui/Makefile
+@@ -1,7 +1,7 @@
+ PACKAGENAME?=lshw
+ 
+-CXX?=c++
+-CC?=cc
++CXX?=clang++
++CC?=clang
+ STRIP?=strip
+ OBJCOPY?=objcopy
+ 
