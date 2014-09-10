@@ -36,8 +36,8 @@ find -type f | xargs chmod 644
 find -type d | xargs chmod 755
 
 %build
-make
-make gui
+make CC=%{__cc}
+make gui CC=%{__cc}
 
 %install
 %makeinstall_std
