@@ -1,4 +1,5 @@
 %define realversion B.0%{version}
+%define _disable_lto 1
 
 Summary:	A hardware lister
 Name:		lshw
