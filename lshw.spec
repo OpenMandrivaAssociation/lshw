@@ -18,7 +18,6 @@ Patch4:		lshw-B.02.18-cmake.patch
 BuildRequires:	cmake
 BuildRequires:	gettext
 BuildRequires:	pkgconfig(gtk+-2.0)
-BuildRequires:	libappstream-glib
 BuildRequires:	ninja
 BuildRequires:	pkgconfig(python3)
 Requires:	hwdata >= 0.314
@@ -79,5 +78,4 @@ rm -rf %{buildroot}%{_datadir}/locale/fr/
 %{_datadir}/lshw/ui/gtk-lshw.ui
 %{_datadir}/pixmaps/gtk-lshw.svg
 %{_datadir}/applications/gtk-lshw.desktop
-%{_datadir}/appdata/gtk-lshw.appdata.xml
 %{_datadir}/polkit-1/actions/org.ezix.lshw.gui.policy
