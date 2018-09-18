@@ -13,7 +13,6 @@ Url:		http://ezix.org/project/wiki/HardwareLiSter
 Source0:	%{name}-%{realversion}.tar.gz
 Patch1:		lshw-B.02.18-scandir.patch
 Patch2:		lshw-B.02.18-20cda77.patch
-Patch3:		lshw-B.02.18-revert-json.patch
 Patch4:		lshw-B.02.18-cmake.patch
 BuildRequires:	cmake
 BuildRequires:	gettext
