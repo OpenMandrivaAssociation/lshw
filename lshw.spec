@@ -46,10 +46,10 @@ find -type d | xargs chmod 755
 %cmake -DNOLOGO=ON -DHWDATA=OFF -DPOLICYKIT=ON -DBUILD_SHARED_LIBS=OFF  -GNinja
 
 %build
-%ninja_build
+%ninja_build -C build
 
 %install
-%ninja_install
+%ninja_install -C build
 
 ln -s gtk-lshw %{buildroot}%{_sbindir}/lshw-gui
 
@@ -61,8 +61,6 @@ rm -f %{buildroot}%{_datadir}/lshw/{oui.txt,*.ids}
 rm -rf %{buildroot}%{_datadir}/locale/fr/
 
 %files
-%license COPYING
-%doc README.md
 %{_sbindir}/lshw
 %{_mandir}/man1/lshw.1*
 
@@ -71,6 +69,7 @@ rm -rf %{buildroot}%{_datadir}/locale/fr/
 %{_bindir}/lshw-gui
 %{_sbindir}/gtk-lshw
 %{_sbindir}/lshw-gui
+%{_datadir}/appdata/gtk-lshw.appdata.xml
 %dir %{_datadir}/lshw
 %{_datadir}/lshw/artwork
 %dir %{_datadir}/lshw/ui
