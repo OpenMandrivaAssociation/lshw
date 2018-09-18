@@ -38,7 +38,7 @@ This package provides a graphical user interface to lshw
 
 %prep
 %setup -qn %{name}-%{realversion}
-%autopatch -p1
+%apply_patches
 
 # Ugly since 2.07 default rights are messed
 find -type f | xargs chmod 644
