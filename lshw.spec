@@ -46,9 +46,11 @@ find -type d | xargs chmod 755
 %cmake -DNOLOGO=ON -DHWDATA=OFF -DPOLICYKIT=ON -DBUILD_SHARED_LIBS=OFF  -GNinja
 
 %build
+pushd build
 %ninja_build
 
 %install
+pushd build
 %ninja_install
 
 ln -s gtk-lshw %{buildroot}%{_sbindir}/lshw-gui
@@ -73,6 +75,7 @@ rm -rf %{buildroot}%{_datadir}/locale/fr/
 %{_sbindir}/lshw-gui
 %dir %{_datadir}/lshw
 %{_datadir}/lshw/artwork
+%{_datadir}/appdata/gtk-lshw.appdata.xml
 %dir %{_datadir}/lshw/ui
 %{_datadir}/lshw/ui/gtk-lshw.ui
 %{_datadir}/pixmaps/gtk-lshw.svg
