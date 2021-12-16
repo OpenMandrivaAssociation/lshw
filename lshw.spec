@@ -3,14 +3,12 @@
 
 Summary:	A hardware lister
 Name:		lshw
-Version:	2.18
-Release:	2
+Version:	2.19.2
+Release:	1
 License:	GPLv2
 Group:		System/Kernel and hardware
 Url:		http://ezix.org/project/wiki/HardwareLiSter
-# To get sources tarball use command
-# svn co http://ezix.org/source/packages/lshw/releases/%{realversion} %{name}-%{realversion} && tar -czf %{name}-%{realversion}.tar.gz --exclude .svn %{name}-%{realversion}
-Source0:	%{name}-%{realversion}.tar.gz
+Source0:	https://www.ezix.org/software/files/lshw-%{realversion}.tar.gz
 Patch1:		lshw-B.02.18-scandir.patch
 Patch2:		lshw-B.02.18-20cda77.patch
 Patch4:		lshw-B.02.18-cmake.patch
