@@ -1,5 +1,4 @@
-define realversion B.0%{version}
-#define _disable_lto 1
+%define realversion B.0%{version}
 
 %bcond_without gui
 
