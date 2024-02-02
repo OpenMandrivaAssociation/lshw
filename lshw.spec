@@ -1,16 +1,16 @@
-#define realversion B.0%{version}
+define realversion B.0%{version}
 #define _disable_lto 1
 
 %bcond_without gui
 
 Summary:	A hardware lister
 Name:		lshw
-Version:	B.02.20
+Version:	2.20
 Release:	1
 License:	GPLv2
 Group:		System/Kernel and hardware
 Url:		https://ezix.org/project/wiki/HardwareLiSter
-Source0:	https://www.ezix.org/software/files/%{name}-%{version}.tar.gz
+Source0:	https://www.ezix.org/software/files/%{name}-%{realversion}.tar.gz
 Source1:	https://salsa.debian.org/openstack-team/third-party/lshw/raw/debian/stein/debian/patches/lshw-gtk.1
 Patch1:		lshw-B.02.18-scandir.patch
 Patch4:		lshw-B.02.20-cmake.patch
@@ -67,7 +67,7 @@ This package provides a graphical user interface to lshw
 #----------------------------------------------------------------------
 
 %prep
-%autosetup -p1 -n %{name}-%{version}
+%autosetup -p1 -n %{name}-%{realversion}
 
 # fix sbin path
 sed -i -e 's,DESTINATION sbin,DESTINATION bin,g' \
